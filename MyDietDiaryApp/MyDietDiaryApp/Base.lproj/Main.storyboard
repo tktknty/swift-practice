@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HSp-ey-d40">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item 1-->
+        <scene sceneID="SXf-6Q-7lR">
+            <objects>
+                <viewController id="aXH-cx-Pgl" customClass="CalendarViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ENY-26-Z0r">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbj-lA-0nh">
+                                <rect key="frame" x="313" y="769" width="41" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="+" cornerStyle="large">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addButton:" destination="8lj-bc-nhn" eventType="touchUpInside" id="8YL-Iz-kqO"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="155-n2-cU5" customClass="FSCalendar">
+                                <rect key="frame" x="20" y="109" width="353" height="560"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="h3Q-dy-FT4"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="h3Q-dy-FT4" firstAttribute="trailing" secondItem="155-n2-cU5" secondAttribute="trailing" constant="20" id="4CN-FO-nQD"/>
+                            <constraint firstItem="155-n2-cU5" firstAttribute="top" secondItem="h3Q-dy-FT4" secondAttribute="top" constant="50" id="CCE-VI-AAO"/>
+                            <constraint firstItem="h3Q-dy-FT4" firstAttribute="bottom" secondItem="155-n2-cU5" secondAttribute="bottom" constant="100" id="gOI-Yd-44F"/>
+                            <constraint firstItem="gbj-lA-0nh" firstAttribute="top" secondItem="155-n2-cU5" secondAttribute="bottom" constant="100" id="kfs-f8-xru"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="guS-RC-d0G"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ktj-co-oMb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="8lj-bc-nhn" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-40.458015267175568" y="12.67605633802817"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="gfP-5o-1ow">
+            <objects>
+                <viewController id="Z4j-PR-cAQ" customClass="GraphViewController" customModule="MyDietDiaryApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wCb-nc-VjL">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gOZ-Uo-UUd"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="CdP-lX-v4z"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Igg-bx-L6F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-40" y="743"/>
+        </scene>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="66D-zS-MOk">
+            <objects>
+                <tabBarController id="HSp-ey-d40" customClass="MainTabBarController" customModule="MyDietDiaryApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="J4Q-rs-avl">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="aXH-cx-Pgl" kind="relationship" relationship="viewControllers" id="HDK-gA-fAu"/>
+                        <segue destination="Z4j-PR-cAQ" kind="relationship" relationship="viewControllers" id="RfT-V0-KSQ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6K9-in-rsE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1152" y="354"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
